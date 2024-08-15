@@ -1,0 +1,31 @@
+.c-link {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  position: relative;
+
+  &:hover,&:active{
+    color: color('blue');
+  }
+
+  &::after {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(1rem);
+    height: 0.3rem;
+    background-color: color('blue');
+    position: absolute;
+    display: none;
+  }
+
+  &.active {
+    &::after {
+      display: block;
+    }
+  }
+}

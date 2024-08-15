@@ -1,0 +1,17 @@
+.o-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26.6rem, 1fr));
+  row-gap: 3rem;
+  column-gap: 3rem;
+  justify-content: center;
+  justify-items: center;
+  transition: 0.3s ease-in-out;
+
+
+  @media (min-width: 62em) {
+    justify-items:center;
+    column-gap: 0;
+  }
+
+}

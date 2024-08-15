@@ -1,0 +1,276 @@
+.c-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-height: calc(100% - 6.5rem);
+
+  @media (min-width: 62em) {
+    gap: 2.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+   &__range-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: 62em) {
+      gap: 5.2rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+    }
+  }
+
+  //este es el input
+
+  /* &__range {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    &:first-of-type {
+      margin-top: 2.2rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
+
+    @media (min-width: 62em) {
+      &:first-of-type {
+        margin-top: initial;
+      }
+
+      &:last-of-type {
+        margin-bottom: initial;
+      }
+    }
+  } */
+
+
+  //range slider
+  /* &__range-container {
+    margin-top: 2rem;
+    position: relative;
+
+    width: 100%;
+
+    @media (min-width: 62em) {
+      margin-top: 3rem;
+      min-width: 20rem;
+    }
+  } */
+   
+  &__range-container{
+     position: relative;
+     width: 100%;
+     min-width: 20rem;
+     height: 0.4rem;
+     margin: 1.8rem 0;
+     background-color: rgba(0, 0, 0, 0.04);
+
+     & input{
+      position: absolute;
+      width: 100%;
+      background: none;
+      pointer-events: none;
+      top: 50%;
+      transform: translateY(-50%);
+      appearance: none;
+     }
+
+     @media (min-width: 62em) {
+
+     }
+  }
+
+  input[type="range"]::-webkit-slider-thumb{
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+    border: 2px solid #91D5FF;;
+    background-color: white;
+    pointer-events: auto;
+    appearance: none;
+    cursor: pointer;
+
+    &:active{
+      border-color: color('blue');
+    }
+    
+    &:focus + .c-form__range-tooltip.is-min{
+      opacity: 0;
+    }
+
+    &:focus + .c-form__range-tooltip,
+      &:active + .c-form__range-tooltip {
+        opacity: 0;
+      }
+  }
+
+  input[type="range"]::-moz-range-thumb{
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+    border: 2px solid #91D5FF;;
+    background-color: white;
+    pointer-events: auto;
+    cursor: pointer;
+
+    &:active{
+      border-color: color('blue');
+    }
+  }
+
+  &__range-tooltip{
+    width: 3.2rem;
+    height: 2.7rem;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: color('white');
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: absolute;
+    opacity: 0;
+ 
+    &.is-min{
+      left: 50%;
+      z-index: 9999;
+      transform: translate(-50% , -160%);
+    }
+
+    &.is-max{
+      right: 0%;
+      transform: translate(50% , -160%);
+      z-index: 9999;
+    }
+
+    &.is-focused{
+      opacity: 1;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      border-top: .8rem solid rgba(0, 0, 0, 0.65);
+      width: 0px;
+      height: 0px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      transform: translate(-50%, 96%);
+
+    }
+
+  }
+
+  &__range-track {
+    height: 100%;
+    position: absolute;
+    background-color: #91D5FF;
+  }
+
+
+  &__fieldset {
+    border: none;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    &--select {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        background-image: url('../../assets/icons/arrow-down-group.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        transform: translate(-1.2rem, 62%);
+        z-index: -1;
+
+      }
+    }
+
+    @media (min-width: 62em) {
+      max-width: 22.4rem;
+    }
+  }
+
+
+  label {
+    color: rgba(0, 0, 0, 0.85);
+    text-transform: capitalize;
+    margin-bottom: 0.9rem;
+  }
+
+  input[type="text"],
+  select {
+    background: none;
+    height: 3.2rem;
+    padding: 0.5rem 1.3rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.65);
+    border-radius: 0.3rem;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  select {
+    appearance: none;
+  }
+
+  &>.c-button--bare {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.25rem;
+    transform: translateX(-0.4rem);
+    cursor: pointer;
+
+    &>img {
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-right: .5rem;
+    }
+
+    @media (min-width: 62em) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(calc(-100% - 1rem), -6.6rem); // en el Eje X como son numeros negativos se suman
+    }
+  }
+
+  &>.c-button--secondary {
+    margin-top: auto;
+    align-self: center;
+    order: 1;
+
+    @media (min-width: 62em) {
+      order: initial;
+      margin-top: 1rem;
+      margin-left: auto;
+    }
+  }
+
+}

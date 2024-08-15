@@ -1,0 +1,54 @@
+.c-button {
+  border: none;
+  padding: 1rem 3.2rem .7rem 3.2rem;
+  background-color: color('orange');
+  color: color('white');
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover,&:focus {
+    background-color: #DB6213;
+  }
+
+  &--primary {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: normal;
+    font-family: $obelixpro;
+  }
+
+  &--secondary,
+  &--outline {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    padding: .9rem 2.5rem .8rem 2.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &--outline{
+    background-color: transparent;
+    color: color('orange');
+    outline: 0.1rem solid color('orange');
+    &:hover,&:focus {
+      background-color: color('orange');
+      color: color('white');
+    }
+  }
+
+  &--bare{
+    background: none;
+    outline: none;
+    padding: 0;
+
+    &:hover, &:focus{
+      background-color: transparent;
+    }
+  }
+
+
+}

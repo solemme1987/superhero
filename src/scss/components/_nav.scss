@@ -1,0 +1,117 @@
+.c-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 144rem;
+  z-index: 9999;
+
+  @media (min-width: 62em) {
+    z-index: auto;
+  }
+  &__menu-toggle {
+    background-size: 2rem 2rem;
+    background-image: url('../../assets/icons/burger.svg');
+    background-repeat: no-repeat;
+    width: 2.43rem;
+    height: 2.14rem;
+    margin-right: 1.28rem;
+
+    @media (min-width: 62em) {
+      display: none;
+    }
+  }
+
+  &__brand {
+    @media (min-width: 62em) {
+      font-size: 2rem;
+      margin-right: 4rem;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 6.5rem);
+    background-color: color('white');
+    top:0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    transform: translate(-100%, 6.5rem);
+
+    @media (min-width: 62em) {
+      width: fit-content;
+      margin-right: auto;
+      height: auto;
+      flex-direction: row;
+      position: static;
+      transform: translate(0);
+      transition: 0s;
+      gap: 3rem;
+    }
+  }
+
+  &__item {
+    padding-top: 3.5rem;
+
+    &:first-of-type {
+      padding-top: 3rem;
+    }
+
+    @media (min-width: 62em) {
+      padding: 0;
+
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__btn-filters {
+    
+    position: relative;
+    padding: 0.2rem 1rem;
+    font-size: 1.4rem;
+    
+    @media (min-width: 48em) {
+      width: 100%;
+      max-width: 8.8rem;
+      padding: 0.4rem 0;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        background-image: url('../../assets/icons/filter-icon-orange.svg');
+        left: 0;
+        transform: translateX(1rem);
+        transition: 0.3s ease-in-out;
+      }
+      
+      &:hover::after,
+      &:focus::after,
+      &.active::after {
+        background-image: url('../../assets/icons/filter-icon.svg');
+      }
+      
+      &>span {
+        margin-left: 2.5rem;
+      }
+    }
+  }
+  
+  &.active > &__menu{
+    transform: translate(0, 6.5rem);
+    @media (min-width: 62em) {
+      transform: translate(0);
+    }
+  }
+
+  &.active > &__menu-toggle{
+    background-image: url('../../assets/icons/close-menu.svg');
+  }
+}

@@ -1,0 +1,18 @@
+.c-type{
+  font-style: normal;
+  font-weight: 400;
+  &--lg{
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    &.bold{
+      font-weight: 700;
+    }
+  }
+  &--sm{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    &.bold{
+      font-weight: 700;
+    }
+  }
+}

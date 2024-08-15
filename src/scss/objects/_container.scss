@@ -1,0 +1,67 @@
+.o-container {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 9.2rem 2.8rem 2.7rem 2.8rem;
+  min-height: calc(100% - 12.5rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+ 
+  @media (min-width: 62em) {
+    padding: 17.1rem 12.6rem 12.6rem 12.6rem; //PT has +4.6
+
+    &.isOpenFilter{
+      padding-top: 31rem;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    background-image: url('../../assets/images/dots_blue.svg');
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 200vw;
+    padding: 4.6rem 12.6rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    @media (min-width: 62em) {
+      background-size: cover;
+      background-position: 40vw 0vw;
+    }
+  }
+  
+  &--hero{
+    position: relative;
+    top:6.5rem;
+    padding: 0;
+   
+    &::after {
+      background-image: url('../../assets/images/dots_orange.svg');
+    }
+
+    @media (min-width: 62em) {
+      height: calc(100% - 12.5rem);
+      top:12.5rem;
+      padding: 0;
+      max-width: 192rem;
+    }
+ 
+    
+
+  }
+
+  &--styleguide{
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 5rem;
+    &::after{
+      background:none;
+    }
+  }
+
+}

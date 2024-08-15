@@ -1,0 +1,52 @@
+
+// - ROBOTO - //
+// https://fonts.google.com/specimen/Roboto?preview.text=ROBOTO
+
+
+// - ObelixPro - //
+// https://www.dafontfree.io/obelix-pro-font-family/
+
+
+@font-face {
+  font-family: 'ObelixPro';
+  src: url('../../assets/font/obelixpro/ObelixPro.woff2') format('woff2'),
+      url('../../assets/font/obelixpro/ObelixPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ObelixPro';
+  src: url('../../assets/font/obelixpro/ObelixPro-Bold.woff2') format('woff2'),
+      url('../../assets/font/obelixpro/ObelixPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ObelixPro';
+  src: url('../../assets/font/obelixpro/belixpro/ObelixPro-Italic.woff2') format('woff2'),
+      url('../../assets/font/obelixpro/ObelixPro-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ObelixPro';
+  src: url('../../assets/font/obelixpro/ObelixPro-BoldItalic.woff2') format('woff2'),
+      url('../../assets/font/obelixpro/ObelixPro-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+$roboto: "Roboto", sans-serif;
+$obelixpro: "ObelixPro", ;
